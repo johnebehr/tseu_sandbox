@@ -44,3 +44,52 @@
       tseu-sandbox-app:
         driver: bridge
     ```
+- Base app structure
+  - ```shell
+    .
+    ├── LICENSE
+    ├── README.md
+    └── app
+        ├── __init__.py
+        ├── main.py
+        └── util
+            ├── __init__.py
+            └── settings.py
+    
+    2 directories, 6 files
+    ```
+    - In <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">app.util.settings</span>, work ahead and add settings for the database connections that will be set up next.
+- Refactor the app and start adding database support 
+  - Add a new directory as a home for the database support 
+  - Add <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">app.db.database</span> to handle database connection activities
+  - Add a new directory for the database models which are reflected from the existing MySQL database.
+  - Add a loader to centralize access to the models.connections
+- Current app structure: 
+  - ```shell
+    .
+    ├── LICENSE
+    ├── README.md
+    └── app
+        ├── __init__.py
+        ├── db
+        │   ├── __init__.py
+        │   ├── database.py
+        │   ├── model_loader.py
+        │   └── models
+        │       ├── __init__py
+        │       ├── cope_contributions.py
+        │       ├── dues.py
+        │       ├── dues_and_cope_track_2yrs.py
+        │       ├── mast_agency.py
+        │       ├── mast_city.py
+        │       ├── mast_county.py
+        │       ├── mast_location.py
+        │       ├── mast_organizer.py
+        │       └── members.py
+        ├── main.py
+        └── util
+            ├── __init__.py
+            └── settings.py
+
+    4 directories, 19 files
+    ```
