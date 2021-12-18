@@ -59,6 +59,8 @@
     2 directories, 6 files
     ```
     - In <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">app.util.settings</span>, work ahead and add settings for the database connections that will be set up next.
+
+### Database Support
 - Refactor the app and start adding database support 
   - Add a new directory as a home for the database support 
   - Add <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">app.db.database</span> to handle database connection activities
@@ -93,3 +95,9 @@
 
     4 directories, 19 files
     ```
+### Search Member Routes
+- Create an API route that will return a member by supplying a Social Security Number
+  - Add a CRUD definition to query the Member database for member info by SSNo
+  - Add a GET route that will return Member info
+  - Add a Pydantic schema that will validate the return data for documentation.
+  
