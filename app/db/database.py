@@ -20,4 +20,12 @@ Base = declarative_base()
 metadata = MetaData(bind=engine)
 
 # Create a SessionLocal class 
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=False)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+# Dependency
+def get_session():
+    session = SessionLocal()
+    try:
+        yield session 
+    finally:
+        session.close()
